@@ -28,7 +28,9 @@ const MapPage = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/requests");
+        const response = await axios.get(
+          "https://valencia-help-backend.onrender.com/requests"
+        );
         setRequests(response.data);
       } catch (error) {
         console.error("Error fetching requests:", error);
@@ -58,7 +60,7 @@ const MapPage = () => {
       };
       try {
         const response = await axios.post(
-          "http://localhost:5000/requests",
+          "https://valencia-help-backend.onrender.com/requests",
           requestDataWithLocation
         );
         setRequests([...requests, response.data]);
